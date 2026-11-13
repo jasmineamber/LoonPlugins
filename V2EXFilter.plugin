@@ -10,5 +10,5 @@ keywords = input,"",type=string,tag=过滤关键词,desc=多个关键词使用�
 [Script]
 response if ${url} ~= /^https:\/\/(?:www\.)?v2ex\.com\/?(?:\?.*)?$/ then script("https://raw.githubusercontent.com/jasmineamber/LoonPlugins/refs/heads/main/scripts/v2ex_block_topic.js", {${keywords}}) with enable=${enabled}, requires_body=true, tag="V2EX主题过滤"
 
-[MitM]
+[Mitm]
 hostname = v2ex.com, www.v2ex.com
