@@ -1,0 +1,14 @@
+#!name = V2EX 主题关键词过滤
+#!desc = 根据自定义关键词过滤 V2EX 主题
+#!author = jasmineamber
+#!loon_version = 3.5.1(983)
+
+[Argument]
+enabled = switch,true,tag=启用过滤
+keywords = input,"",type=string,tag=过滤关键词,desc=多个关键词使用逗号分隔
+
+[Script]
+response if ${url} ~= /^https:\/\/v2ex\.com\/(?:\?.*)?$/ then script("https://raw.githubusercontent.com/jasmineamber/LoonPlugins/refs/heads/main/scripts/v2ex_block_topic.js", {keywords: "${keywords}"}) with enable=${enabled}, requires_body=true, tag="V2EX主题过滤"
+
+[MitM]
+hostname = v2ex.com
