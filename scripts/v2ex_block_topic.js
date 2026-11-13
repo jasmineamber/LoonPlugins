@@ -54,8 +54,10 @@ if (keywords.length === 0) {
                 .trim();
 
             // 判断标题是否包含任意一个关键词
+            const normalizedTitle = title.toLowerCase();
+
             const matchedKeyword = keywords.find(keyword =>
-                title.includes(keyword)
+                normalizedTitle.includes(keyword.toLowerCase())
             );
 
             if (matchedKeyword) {
